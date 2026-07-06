@@ -1,0 +1,17 @@
+# Secrets — never commit
+.env
+
+# Generated output (regenerable per product)
+output/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Debug artifacts
+**/_debug/
+
+# OS
+Thumbs.db
+.DS_Store

@@ -1,0 +1,4 @@
+python-dotenv>=1.0.1      # .env loading
+reportlab>=4.0            # Product Package PDF export (package command)
+pdfplumber>=0.11          # reading a PDF offer brief (intake command); optional if you use .md/.txt
+# Generation uses the Claude Code CLI (installed separately via npm), not a Python SDK.
