@@ -9,8 +9,9 @@ output/
 __pycache__/
 *.pyc
 
-# Debug artifacts
+# Debug + scratch
 **/_debug/
+briefs/_intake_*
 
 # OS
 Thumbs.db

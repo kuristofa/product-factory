@@ -44,7 +44,13 @@ Use exactly this schema:
 }}
 
 Constraints: keep scope tight enough to be production-ready and completable at a low-ticket price.
-Do not pad with filler modules. Every module must advance the Main Promise."""
+Do not pad with filler modules. Every module must advance the Main Promise.
+Worksheets and templates are supporting materials for the modules only — do NOT introduce a new
+named template/worksheet that duplicates a core deliverable or that acts as an extra bonus, and make
+sure delivery_instructions never references a count that doesn't match what you listed.
+For customer_success_path, each milestone's "how_they_know_they_hit_it" must be about the buyer
+COMPLETING a step or having a finished piece of the system — never about an external result
+(subscribers, sales, followers) arriving, which cannot be guaranteed."""
     return system, user
 
 

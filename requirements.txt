@@ -1,4 +1,6 @@
 python-dotenv>=1.0.1      # .env loading
-reportlab>=4.0            # Product Package PDF export (package command)
-pdfplumber>=0.11          # reading a PDF offer brief (intake command); optional if you use .md/.txt
+flask>=3.0               # local web server behind the desktop window
+pywebview>=5.0           # native OS window for the interface (WebView2 on Windows)
+reportlab>=4.0            # Product Package PDF export
+pdfplumber>=0.11          # reading a PDF offer brief (intake); optional if you use .md/.txt
 # Generation uses the Claude Code CLI (installed separately via npm), not a Python SDK.

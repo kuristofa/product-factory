@@ -59,6 +59,12 @@ NON-NEGOTIABLE HIERARCHY RULES:
 4. Every deliverable must serve a defined purpose tied to the approved core promise.
    No filler. If a deliverable doesn't advance the promise, it doesn't belong.
 5. No duplicate deliverables. Each solves a distinct problem.
+6. Do NOT invent deliverables, bonuses, templates, or worksheets beyond what the brief supports.
+   The ONLY bonuses are the ones in the brief's bonus_deliverables. Worksheets and templates in the
+   product package are supporting materials for the modules; they must not duplicate a core
+   deliverable, must not be presented as standalone products or bonuses, and any count you mention
+   (e.g. "the 3 templates") must exactly match the items you actually listed. When in doubt, fold
+   supporting material into an existing deliverable rather than creating a new named asset.
 """
 
 # --- Ethics guardrails (Constraints section of the spec) ---------------------
@@ -69,10 +75,16 @@ ETHICAL MARKETING GUARDRAILS (hard constraints):
 - No misleading, exaggerated, or unsupported claims.
 - No fabricated earnings/income claims and no implied "typical results." Any income or ROI
   language must be framed as potential/illustrative and be honestly caveated.
+- No result that depends on the buyer's effort, audience, or circumstances (sales, subscribers,
+  followers, income, weight, bookings, etc.) may be stated as guaranteed or written as an expected
+  checkpoint/milestone. Frame all such outcomes as CONDITIONAL and ILLUSTRATIVE, e.g. "if the
+  system is set up right, here's what it looks like when someone subscribes." The only milestones
+  you may state as definite are the buyer completing a step or possessing the finished asset/system.
 - No unsubstantiated health claims. Route anything health-adjacent to human review.
 - No spammy automation. DMs provide value and respect the recipient; easy opt-out implied.
 - Products must be genuinely valuable and production-ready.
-Respect the brief's stated Ethical Boundaries above all.
+Respect the brief's stated Ethical Boundaries above all — where they are stricter than these rules,
+the brief wins.
 """
 
 

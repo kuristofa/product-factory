@@ -29,15 +29,25 @@ class BlockingValidationError(GateBlocked):
 
 class Pipeline:
     def __init__(self, brief_path: str | Path, cfg: Settings | None = None,
-                 force: bool = False, auto: bool = False, llm: LLMClient | None = None):
+                 force: bool = False, auto: bool = False, llm: LLMClient | None = None,
+                 on_progress: Callable[[str], None] | None = None):
         self.cfg = cfg or settings
         self.force = force
         self.auto = auto
+        self.on_progress = on_progress
         self.brief: OfferBrief = load_and_require_complete(brief_path)  # Phase 2: hard reject
         self.writer = out.OutputWriter(self.cfg.output_dir, self.brief.offer_name)
         self.gates = GateStore(self.writer.root)
         self.llm = llm or LLMClient(self.cfg)
         self.assets: dict[str, Any] = {}
+        self.deliverable_pdf: Path | None = None
+
+    def _progress(self, msg: str) -> None:
+        if self.on_progress:
+            try:
+                self.on_progress(msg)
+            except Exception:  # noqa: BLE001 — progress reporting must never break a run
+                pass
 
     # -- helpers --------------------------------------------------------------
 
@@ -48,6 +58,7 @@ class Pipeline:
             logger.info("Loading cached stage '%s'", name)
             data = json.loads(cache.read_text(encoding="utf-8"))
         else:
+            self._progress(name)
             try:
                 data = generate()
             except LLMError as e:
@@ -129,6 +140,7 @@ class Pipeline:
         self._gate("checkout_copy", out.render_checkout(checkout))
 
         # Phase 4 — hierarchy validation + gates
+        self._progress("hierarchy_validation")
         result = hv.validate(b, self.assets, llm=self.llm)
         self.writer.write_json("hierarchy_validation", result.to_dict())
         review = _render_validation(result)
@@ -146,6 +158,7 @@ class Pipeline:
 
         # Run complete — auto-build the single-file deliverable so the user doesn't have to.
         self.deliverable_pdf = None
+        self._progress("packaging")
         try:
             from factory.package import package
             _, pdf_path = package(self.writer.root, b.offer_name)

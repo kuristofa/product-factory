@@ -1,0 +1,23 @@
+AI-powered Product Production Factory
+=====================================
+
+FOR THE PERSON SETTING THIS UP (one time, needs to be a bit technical)
+---------------------------------------------------------------------
+1. Double-click  Setup.bat   and follow the messages.
+2. Install Claude Code and sign in with your Claude Max account:
+     - Install Node.js (LTS) from https://nodejs.org
+     - In a terminal:  npm install -g @anthropic-ai/claude-code
+     - Then:           claude     (sign in when prompted)
+3. That's it. This only has to be done once, on this computer.
+
+FOR EVERYONE ELSE (daily use, no technical steps)
+-------------------------------------------------
+- Double-click  Start.bat
+- The app window opens.
+- Pick a brief, or drag in the offer file from the Grand Slam Offer GPT.
+- Click Start, approve at the two review steps, and download the PDF.
+
+If the app says setup isn't finished, tell whoever set it up.
+
+Note: this app runs the AI on THIS computer using the Claude account it was set
+up with. It has to run here — that's why setup happens once on this machine.
